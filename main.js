@@ -6,6 +6,5 @@ function getCurrentWeek() {
 }
 
 Zepto(function ($) {
-
 	$('.week').text(getCurrentWeek())
 })
