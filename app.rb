@@ -3,11 +3,11 @@ require 'numbers_and_words'
 
 get '/' do
 	# Get today's date
-	today = Time.now.utc + Time.zone_offset('SGT')
+	today = Time.now
 	todayString = today.strftime("%A, %e %B %Y").downcase
 
 	# Setup
-	startDate = Time.new(2013, 8, 5).utc + Time.zone_offset('SGT')
+	startDate = Time.new(2013, 8, 5)
 	week = (today.to_i - startDate.to_i) / 60 / 60 / 24 / 7
 
 	if week == 8 then
