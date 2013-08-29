@@ -17,5 +17,9 @@ get '/' do
 	end
 
 	# Generate view
-	erb :index, :locals => { :today => todayString, :week => week.to_words, :isRecessWeek => isRecessWeek }
+	if request.user_agent =~ /curl/ then
+		"#{week}"
+	else
+		erb :index, :locals => { :today => todayString, :week => week.to_words, :isRecessWeek => isRecessWeek }
+	end
 end
